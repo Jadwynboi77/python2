@@ -29,3 +29,6 @@ print("you will now be given a choice of Camps")
 
 # --- making the lists
 campList = ["Cultural immersion","Kayaking and pancakes","Mountain biking"]
+dayList = [5,3,4]
+costList = [800,400,900]
+dificultyList = ["easy","moderite","difficult"]
