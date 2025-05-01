@@ -1,6 +1,11 @@
 print("welcome")
-# ------ gather name info and age
+line = "==============================="
+# =============================== gather name info and age ===============================
+
+print(line)
+
 # making a while loop to see if the user doesnt leave it blank
+
 fn = "" # -- first name = fn
 while fn == "":
     fn = input("What is your first name? ")
@@ -10,17 +15,28 @@ while fn == "":
 fn.lower()
 
 # asking and testing if age is 5-17
-try:
-    Age = int(input("Please enter your age: "))
-    if Age < 5:
-        print("Sorry, you are too young.")
-        exit()
-    elif Age > 17:
-        print("Sorry, you are too old.")
-        exit()
-# if there is an exception, print this out
-except ValueError:
-  print("That's not a valid number!")
+def Get_age():
+    while True:
+        try:
+            Age = int(input("Please enter your age: "))
+            if Age > 0:
+                return Age
+            else: print("Age cant be negitive, please Enter again")
+        except ValueError:
+            print("That's not a valid number!")
+            
+
+age = Get_age()
+
+def Age_validation():
+    while True:
+        if age < 5:
+            print("Sorry, you are too young.")
+            return age
+        elif age > 17:
+            print("Sorry, you are too old.")
+            return age
+
 
 # -- informing the user
 
