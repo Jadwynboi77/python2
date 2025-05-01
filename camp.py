@@ -1,8 +1,19 @@
 print("welcome")
+
+#making the seperation lines
+
 line = "==============================="
+blank = " "
+
+def new_line():
+    print(blank)
+    print(line) 
+
+#these lines will be used to seperate sections
+
 # =============================== gather name info and age ===============================
 
-print(line)
+new_line()
 
 # making a while loop to see if the user doesnt leave it blank
 
@@ -37,11 +48,13 @@ def Age_validation():
             print("Sorry, you are too old.")
             return age
 
+new_line()
 
 # -- informing the user
 
 print(f"welcome {fn}.")
 print("you will now be given a choice of Camps")
+new_line()
 
 # --- making the lists
 campList = ["Cultural immersion","Kayaking and pancakes","Mountain biking"]
