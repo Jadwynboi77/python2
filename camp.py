@@ -3,10 +3,8 @@ print("welcome")
 #making the seperation lines
 
 line = "==============================="
-blank = " "
 
 def new_line():
-    print(blank)
     print(line) 
 
 #these lines will be used to seperate sections
@@ -54,16 +52,15 @@ new_line()
 
 print(f"welcome {fn}.")
 print("you will now be given a choice of Camps")
-new_line()
+# =============================== making the lists ===============================
 
-# --- making the lists
 campList = ["Cultural immersion","Kayaking and pancakes","Mountain biking"]
 mealList = ["standered","vegetarain","dairy-free"]
 dayList = [5,3,4]
 costList = [800,400,900]
 dificultyList = ["easy","moderite","difficult"]
 count = 0
-#the bypass allows this list to start at 1, instead of starting at 0
+meal = True
 
 #creating the defines (tuples)
 def Camp_list():
@@ -75,3 +72,44 @@ def meal_list():
     print(f'1. {mealList[count]}')
     print(f'2. {mealList[count + 1]}')
     print(f'3. {mealList[count + 1]}')
+
+# =============================== printing list ===============================
+new_line()
+
+Camp_list()
+
+#asking user waht choice they want
+def Get_camp():
+    while True:
+        try:
+            Ask1 = int(input("Please select a number for what camp you want: "))
+            if Ask1 > 0 or Ask1 < 4:
+                return Ask1
+            else: print("Your choice must be 1-3 please Enter again")
+        except ValueError:
+            print("That's not a valid number!")
+
+Get_camp()
+
+new_line()
+
+Ask2 = input("would you like to select a meal (yes or no): ")
+
+Ask2.lower()
+
+def Get_meal():
+    while True:
+        try:
+            Ask2 = int(input("Please select a number for what meal you want: "))
+            if Ask2 > 0 or Ask2 < 4:
+               return Ask2
+            else: print("Your choice must be 1-3 please Enter again")
+        except ValueError:
+           print("That's not a valid number!")
+
+if Ask2 == "yes":
+    meal_list()
+    Get_meal()
+elif Ask2 == "no":
+    meal = False
+else: print("That is not a valid awnser, please select yes or no.")
