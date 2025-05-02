@@ -52,6 +52,7 @@ new_line()
 
 print(f"welcome {fn}.")
 print("you will now be given a choice of Camps")
+
 # =============================== making the lists ===============================
 
 campList = ["Cultural immersion","Kayaking and pancakes","Mountain biking"]
@@ -63,6 +64,7 @@ count = 0
 meal = True
 
 #creating the defines (tuples)
+
 def Camp_list():
     print(f'1. {campList[count]}, included with a fee of {costList[count]} and is considered "{dificultyList[count]}".')
     print(f'2. {campList[count + 1]}, included with a fee of {costList[count + 1]} and is considered "{dificultyList[count + 1]}".')
@@ -74,11 +76,13 @@ def meal_list():
     print(f'3. {mealList[count + 1]}')
 
 # =============================== printing list ===============================
+
 new_line()
 
-Camp_list()
+
 
 #asking user waht choice they want
+
 def Get_camp():
     while True:
         try:
@@ -89,13 +93,16 @@ def Get_camp():
         except ValueError:
             print("That's not a valid number!")
 
+
+
+#printing camp options
+
+Camp_list()
 Get_camp()
 
 new_line()
 
-Ask2 = input("would you like to select a meal (yes or no): ")
-
-Ask2.lower()
+# asking user what meal they want
 
 def Get_meal():
     while True:
@@ -105,11 +112,21 @@ def Get_meal():
                return Ask2
             else: print("Your choice must be 1-3 please Enter again")
         except ValueError:
-           print("That's not a valid number!")
+           print("That's not a valid number!") #making sure they put a number
 
-if Ask2 == "yes":
-    meal_list()
-    Get_meal()
-elif Ask2 == "no":
-    meal = False
-else: print("That is not a valid awnser, please select yes or no.")
+# printing meal options
+
+meal_list()
+Get_meal()
+
+#turning the tuples into variables
+
+ask1 = (Get_camp)
+ask2 = Get_meal
+
+new_line()
+
+# =============================== concluding everything =============================== 
+
+print(f'{fn}, age {age}, has chosen {campList[ask1 - 1]}, alongside a meal option of: {mealList[ask2 - 1]}')
+print(f"This camp will last {dayList[ask1 - 1]}, It's considered {dificultyList[ask1 - 1]} and an additional cost of {costList[ask1 - 1]}")
