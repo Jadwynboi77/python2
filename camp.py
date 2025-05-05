@@ -15,13 +15,13 @@ new_line()
 
 # making a while loop to see if the user doesnt leave it blank
 
-fn = "" # -- first name = fn
-while fn == "":
-    fn = input("What is your first name? ")
+Campers_name = ""
+while Campers_name == "":
+    Campers_name = input("What is your first name? ")
     # check for valid input, if good then break the loop
-    if fn != "": break
-    else: fn = input("What is your first name? ")
-fn.lower()
+    if Campers_name != "": break
+    else: Campers_name = input("What is your first name? ")
+Campers_name.lower()
 
 # asking and testing if age is 5-17
 def Get_age():
@@ -50,7 +50,7 @@ new_line()
 
 # -- informing the user
 
-print(f"welcome {fn}.")
+print(f"welcome {Campers_name}.")
 print("you will now be given a choice of Camps")
 
 # =============================== making the lists ===============================
@@ -79,25 +79,27 @@ def meal_list():
 
 new_line()
 
-
+Camp_list()
 
 #asking user waht choice they want
 
 def Get_camp():
     while True:
         try:
-            Ask1 = int(input("Please select a number for what camp you want: "))
-            if Ask1 > 0 or Ask1 < 4:
-                return Ask1
+            question1 = int(input("Please select a number for what camp you want: "))
+            if question1 > 0 or question1 < 4: #meal choice is only 1-3
+                return question1
             else: print("Your choice must be 1-3 please Enter again")
         except ValueError:
             print("That's not a valid number!")
 
+#turning the camp tuples into variables
+question1 = Get_camp
 
 
 #printing camp options
 
-Camp_list()
+
 Get_camp()
 
 new_line()
@@ -107,26 +109,25 @@ new_line()
 def Get_meal():
     while True:
         try:
-            Ask2 = int(input("Please select a number for what meal you want: "))
-            if Ask2 > 0 or Ask2 < 4:
-               return Ask2
+            question2 = int(input("Please select a number for what meal you want: "))
+            if question2 > 0 or question2 < 4:
+               return question2
             else: print("Your choice must be 1-3 please Enter again")
         except ValueError:
            print("That's not a valid number!") #making sure they put a number
+
+
+#turning the meal tuples into variables
+question2 = Get_meal
 
 # printing meal options
 
 meal_list()
 Get_meal()
 
-#turning the tuples into variables
-
-ask1 = (Get_camp)
-ask2 = Get_meal
-
 new_line()
 
 # =============================== concluding everything =============================== 
 
-print(f'{fn}, age {age}, has chosen {campList[ask1 - 1]}, alongside a meal option of: {mealList[ask2 - 1]}')
-print(f"This camp will last {dayList[ask1 - 1]}, It's considered {dificultyList[ask1 - 1]} and an additional cost of {costList[ask1 - 1]}")
+print(f'{Campers_name}, age {age}, has chosen {campList[question1]}, alongside a meal option of: {mealList[question2]}')
+#print(f"This camp will last {dayList[question1 - 1]}, It's considered {dificultyList[question1 - 1]} and an additional cost of {costList[question1 - 1]}")
