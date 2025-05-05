@@ -48,7 +48,7 @@ def Age_validation():
         elif age > 17: # maximum age
             print("Sorry, you are too old.")
             return age
-            
+
 new_line()
 
 # -- informing the user
@@ -150,3 +150,19 @@ new_line()
 
 print(f'{Campers_name}, age {age}, has chosen {campList[Question1]}, alongside a meal option of: {mealList[Question2]}')
 print(f"This camp will last {dayList[Question1 - 1]}, It's considered {dificultyList[Question1 - 1]} and an additional cost of {cost}")
+
+# =============================== confirm everything =============================== 
+
+def Confirm():
+    while True:   
+        Final_question = input("would yopu like to take a shuttle transport? (Yes or no): ")
+        if Final_question.lower() == "yes" or Final_question.lower() == "no":
+           return Final_question
+        else: print("Your choice must Yes or No please Enter again")
+
+Final_Question = Confirm()
+
+if Final_Question == "yes": print("Great, we can't wait to see you there! :) ")
+elif Final_Question == "no":
+    print(f"{Campers_name} has not confirmed")
+    exit
