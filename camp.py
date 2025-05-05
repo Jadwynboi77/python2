@@ -10,6 +10,7 @@ def new_line():
 #these lines will be used to seperate sections
 
 # =============================== gather name info and age ===============================
+# =============================== name info ===============================
 
 new_line()
 
@@ -23,12 +24,14 @@ while Campers_name == "":
     else: Campers_name = input("What is your first name? ")
 Campers_name.lower()
 
+# =============================== age info ===============================
+
 # asking and testing if age is 5-17
 def Get_age():
     while True:
         try:
             Age = int(input("Please enter your age: "))
-            if Age > 0:
+            if Age > 0: #to make sure its not a negitave number 
                 return Age
             else: print("Age cant be negitive, please Enter again")
         except ValueError:
@@ -39,13 +42,13 @@ age = Get_age()
 
 def Age_validation():
     while True:
-        if age < 5:
+        if age < 5: # minimum age
             print("Sorry, you are too young.")
             return age
-        elif age > 17:
+        elif age > 17: # maximum age
             print("Sorry, you are too old.")
             return age
-
+            
 new_line()
 
 # -- informing the user
@@ -61,7 +64,6 @@ dayList = [5,3,4]
 costList = [800,400,900]
 dificultyList = ["easy","moderite","difficult"]
 count = 0
-meal = True
 
 #creating the defines (tuples)
 
@@ -73,9 +75,10 @@ def Camp_list():
 def meal_list():
     print(f'1. {mealList[count]}')
     print(f'2. {mealList[count + 1]}')
-    print(f'3. {mealList[count + 1]}')
+    print(f'3. {mealList[count + 2]}')
 
 # =============================== printing list ===============================
+# =============================== camp list =============================== 
 
 new_line()
 
@@ -94,15 +97,10 @@ def Get_camp():
             print("That's not a valid number!")
 
 #turning the camp tuples into variables
-question1 = Get_camp
-
-
-#printing camp options
-
-
-Get_camp()
+Question1 = Get_camp()
 
 new_line()
+# =============================== meal list ===============================
 
 # asking user what meal they want
 
@@ -118,16 +116,37 @@ def Get_meal():
 
 
 #turning the meal tuples into variables
-question2 = Get_meal
+
+meal_list()
+Question2 = Get_meal()
 
 # printing meal options
 
-meal_list()
-Get_meal()
-
 new_line()
+# =============================== shuttle option =============================== 
+
+
+
+def Shuttle():
+    while True:
+        try:
+            question3 = input("would yopu like to take a shuttle transport? (Yes or no): ")
+            if question3.lower() == "yes" or question3.lower() == "no":
+               return question3
+            else: print("Your choice must Yes or No please Enter again")
+        except ValueError:
+           print("Awnser cannot be a number!") # making sure they don't put a number
+
+Question3 = Shuttle()
+
+cost = costList[Question1 - 1] # presetting the cost so if they say no its still gonna run the {cost} in the output
+
+if Question3 == "yes":
+    cost = cost + 80 # cost of transport
 
 # =============================== concluding everything =============================== 
 
-print(f'{Campers_name}, age {age}, has chosen {campList[question1]}, alongside a meal option of: {mealList[question2]}')
-#print(f"This camp will last {dayList[question1 - 1]}, It's considered {dificultyList[question1 - 1]} and an additional cost of {costList[question1 - 1]}")
+new_line()
+
+print(f'{Campers_name}, age {age}, has chosen {campList[Question1]}, alongside a meal option of: {mealList[Question2]}')
+print(f"This camp will last {dayList[Question1 - 1]}, It's considered {dificultyList[Question1 - 1]} and an additional cost of {cost}")
