@@ -27,33 +27,37 @@ Campers_name.lower()
 # =============================== age info ===============================
 
 # asking and testing if age is 5-17
+
 def Get_age():
     while True:
         try:
             Age = int(input("Please enter your age: "))
             if Age > 0: #to make sure its not a negitave number 
                 return Age
-            else: print("Age cant be negitive, please Enter again")
-        except ValueError:
-            print("That's not a valid number!")
+            else: print("Age cannot be 0 or include symbols, please Enter again")
+        except ValueError: #to make sure it is a number 
+            print("That's not a valid number!") 
             
 
 age = Get_age()
+
 
 def Age_validation():
     while True:
         if age < 5: # minimum age
             print("Sorry, you are too young.")
-            return age
+            exit()
         elif age > 17: # maximum age
             print("Sorry, you are too old.")
-            return age
+            exit()
+        else: print(f"welcome {Campers_name}.")
+        break
 
-new_line()
+Age_validation()
 
 # -- informing the user
 
-print(f"welcome {Campers_name}.")
+
 print("you will now be given a choice of Camps")
 
 # =============================== making the lists ===============================
@@ -130,7 +134,7 @@ new_line()
 def Shuttle():
     while True:
         try:
-            question3 = input("would yopu like to take a shuttle transport? (Yes or no): ")
+            question3 = input("would you like to take a shuttle transport? (Yes or no): ")
             if question3.lower() == "yes" or question3.lower() == "no":
                return question3
             else: print("Your choice must Yes or No please Enter again")
@@ -148,21 +152,21 @@ if Question3 == "yes":
 
 new_line()
 
-print(f'{Campers_name}, age {age}, has chosen {campList[Question1]}, alongside a meal option of: {mealList[Question2]}')
+print(f'{Campers_name}, age {age}, has chosen {campList[Question1 - 1]}, alongside a meal option of: {mealList[Question2 - 1]}')
 print(f"This camp will last {dayList[Question1 - 1]}, It's considered {dificultyList[Question1 - 1]} and an additional cost of {cost}")
 
 # =============================== confirm everything =============================== 
 
 def Confirm():
     while True:   
-        Final_question = input("would yopu like to take a shuttle transport? (Yes or no): ")
+        Final_question = input("would yopu like to confirm? (Yes or no): ")
         if Final_question.lower() == "yes" or Final_question.lower() == "no":
            return Final_question
         else: print("Your choice must Yes or No please Enter again")
 
-Final_Question = Confirm()
+final_Question = Confirm()
 
-if Final_Question == "yes": print("Great, we can't wait to see you there! :) ")
-elif Final_Question == "no":
+if final_Question == "yes": print("Great, we can't wait to see you there! :) ")
+elif final_Question == "no":
     print(f"{Campers_name} has not confirmed")
     exit
