@@ -27,6 +27,8 @@ Campers_name.lower()
 # =============================== age info ===============================
 
 # asking and testing if age is 5-17
+min_age = 5 #the names should explain it
+max_age = 17
 
 def Get_age():
     while True:
@@ -44,10 +46,10 @@ age = Get_age()
 
 def Age_validation():
     while True:
-        if age < 5: # minimum age
+        if age < min_age: # minimum age
             print("Sorry, you are too young.")
             exit()
-        elif age > 17: # maximum age
+        elif age > max_age: # maximum age
             print("Sorry, you are too old.")
             exit()
         else: print(f"welcome {Campers_name}.")
@@ -62,12 +64,12 @@ print("you will now be given a choice of Camps")
 
 # =============================== making the lists ===============================
 
-campList = ["Cultural immersion","Kayaking and pancakes","Mountain biking"]
-mealList = ["standered","vegetarain","dairy-free"]
-dayList = [5,3,4]
-costList = [800,400,900]
-dificultyList = ["easy","moderite","difficult"]
-count = 0
+campList = ["Cultural immersion","Kayaking and pancakes","Mountain biking"] #list for the camp choice
+mealList = ["standered","vegetarain","dairy-free"] #list for the meals
+dayList = [5,3,4] # list for the amount of days
+costList = [800,400,900] #list for the cost
+dificultyList = ["easy","moderite","difficult"] #list for how difficult it will be
+count = 0 #will be used to tally up what number of the list will be chosen for output
 
 #creating the defines (tuples)
 
@@ -101,6 +103,8 @@ def Get_camp():
             print("That's not a valid number!")
 
 #turning the camp tuples into variables
+#Question1 is now a variable that can be used with a f string (Diference being capital Q)
+#qustion1 remains a function, and can not be used in a f string (Diference being Lowercase Q)
 Question1 = Get_camp()
 
 new_line()
