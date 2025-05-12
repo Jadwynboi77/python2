@@ -150,7 +150,7 @@ Question3 = Shuttle()
 cost = costList[Question1 - 1] # presetting the cost so if they say no its still gonna run the {cost} in the output
 
 if Question3 == "yes":
-    cost = cost + 80 # cost of transport
+    cost += 80 # cost of transport
 
 # =============================== concluding everything =============================== 
 
