@@ -156,8 +156,7 @@ if Question3 == "yes":
 
 new_line()
 
-print(f'{Campers_name}, age {age}, has chosen {campList[Question1 - 1]}, alongside a meal option of: {mealList[Question2 - 1]}')
-print(f"This camp will last {dayList[Question1 - 1]}, It's considered {dificultyList[Question1 - 1]} and an additional cost of {cost}")
+print(f"{Campers_name}, age {age}, has chosen {campList[Question1 - 1]}, alongside a meal option of: {mealList[Question2 - 1]}, This camp will last {dayList[Question1 - 1]}, It's considered {dificultyList[Question1 - 1]} and an additional cost of {cost}.")
 
 # =============================== confirm everything =============================== 
 
