@@ -43,6 +43,25 @@ def Get_age():
 
 age = Get_age()
 
+# =============================== leader Option ===============================
+
+def Leader(): #if the age is 15-17, they can have the choice to be a leader
+    while True:
+        try:
+            if age >= 15: 
+                print("Because you are over the age of 15") #telling them why they have the option
+                AskLeader = input("Would you like to volunteer for camp leader? (yes/no): ")
+                AskLeader.lower #making it all lowercase
+                if AskLeader == "yes":
+                    AskLeader = True
+                    return AskLeader
+                elif AskLeader == "no":
+                    AskLeader = False
+                    return AskLeader
+                else: 
+                    print("Thats not a valid awnser!")
+        except ValueError: #to make sure it is a number
+            print("That's not a valid number!") 
 
 def Age_validation():
     while True:
@@ -58,6 +77,12 @@ def Age_validation():
 Age_validation()
 
 # -- informing the user
+
+new_line()
+if age >= 15:
+    leaderconfirm = Leader() #making the function into a value
+
+
 
 
 print("you will now be given a choice of Camps")
@@ -96,7 +121,14 @@ def Get_camp():
     while True:
         try:
             question1 = int(input("Please select a number for what camp you want: "))
-            if question1 > 0 or question1 < 4: #meal choice is only 1-3
+            if question1 == 1:
+                question1 - 1
+                return question1
+            elif question1 == 2:
+                question1 - 1
+                return question1
+            elif question1 == 3:
+                question1 - 1
                 return question1
             else: print("Your choice must be 1-3 please Enter again")
         except ValueError:
@@ -133,7 +165,8 @@ Question2 = Get_meal()
 new_line()
 # =============================== shuttle option =============================== 
 
-
+shuttleChoice = 0 #for the output
+ShuttleList = ["No","Yes"]
 
 def Shuttle():
     while True:
@@ -150,13 +183,20 @@ Question3 = Shuttle()
 cost = costList[Question1 - 1] # presetting the cost so if they say no its still gonna run the {cost} in the output
 
 if Question3 == "yes":
+    shuttleChoice = 1
     cost += 80 # cost of transport
 
 # =============================== concluding everything =============================== 
 
 new_line()
 
-print(f"{Campers_name}, age {age}, has chosen {campList[Question1 - 1]}, alongside a meal option of: {mealList[Question2 - 1]}, This camp will last {dayList[Question1 - 1]}, It's considered {dificultyList[Question1 - 1]} and an additional cost of {cost}.")
+print(f"Name: {Campers_name}")
+print(f"Age: {age}")
+print(f"camp selection: {campList[Question1]}")
+print(f"Days: {dayList[Question1]}")
+print(f"Difficulty: {dificultyList[Question1]}")
+print(f"Meal: {mealList[Question2 - 1]}")
+print(f"Shuttle: {dificultyList[shuttleChoice]}")
 
 # =============================== confirm everything =============================== 
 
