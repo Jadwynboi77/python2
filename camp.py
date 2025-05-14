@@ -149,7 +149,8 @@ def Get_meal():
     while True:
         try:
             question2 = int(input("Please select a number for what meal you want: "))
-            if question2 > 0 or question2 < 4:
+            if question2 == 1 or 0 or question2 == 2 or question2 == 3:
+               question2 - 1
                return question2
             else: print("Your choice must be 1-3 please Enter again")
         except ValueError:
@@ -196,8 +197,9 @@ print(f"Age: {age}")
 print(f"camp selection: {campList[Question1]}")
 print(f"Days: {dayList[Question1]}")
 print(f"Difficulty: {dificultyList[Question1]}")
-print(f"Meal: {mealList[Question2 - 1]}")
-print(f"Shuttle: {dificultyList[shuttleChoice]}")   
+print(f"Meal: {mealList[Question2]}")
+print(f"Shuttle: {dificultyList[shuttleChoice]}")
+print(f"Total cost: {cost}")   
 
 # =============================== confirm everything =============================== 
 
