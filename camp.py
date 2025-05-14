@@ -34,8 +34,9 @@ def Get_age():
     while True:
         try:
             Age = int(input("Please enter your age: "))
-            if Age > 0: #to make sure its not a negitave number 
-                return Age
+            if Age < 0: #to make sure its not a negitave number 
+                print("Age cannot be Negative, Please enter again")
+            elif Age > 0: return Age
             else: print("Age cannot be 0 or include symbols, please Enter again")
         except ValueError: #to make sure it is a number 
             print("That's not a valid number!") 
@@ -196,7 +197,7 @@ print(f"camp selection: {campList[Question1]}")
 print(f"Days: {dayList[Question1]}")
 print(f"Difficulty: {dificultyList[Question1]}")
 print(f"Meal: {mealList[Question2 - 1]}")
-print(f"Shuttle: {dificultyList[shuttleChoice]}")
+print(f"Shuttle: {dificultyList[shuttleChoice]}")   
 
 # =============================== confirm everything =============================== 
 
