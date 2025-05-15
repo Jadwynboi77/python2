@@ -20,7 +20,7 @@ Campers_name = ""
 while Campers_name == "":
     Campers_name = input("What is your first name? ")
     # check for valid input, if good then break the loop
-    if Campers_name != "": break
+    if Campers_name != "" and not Campers_name.isdigit(): break
     else: Campers_name = input("What is your first name? ")
 Campers_name.lower()
 
