@@ -123,13 +123,10 @@ def Get_camp():
         try:
             question1 = int(input("Please select a number for what camp you want: "))
             if question1 == 1:
-                question1 - 1
                 return question1
             elif question1 == 2:
-                question1 - 1
                 return question1
             elif question1 == 3:
-                question1 - 1
                 return question1
             else: print("Your choice must be 1-3 please Enter again")
         except ValueError:
@@ -150,7 +147,7 @@ def Get_meal():
         try:
             question2 = int(input("Please select a number for what meal you want: "))
             if question2 == 1 or 0 or question2 == 2 or question2 == 3:
-               question2 - 1
+               
                return question2
             else: print("Your choice must be 1-3 please Enter again")
         except ValueError:
@@ -194,11 +191,11 @@ new_line()
 
 print(f"Name: {Campers_name}")
 print(f"Age: {age}")
-print(f"camp selection: {campList[Question1]}")
-print(f"Days: {dayList[Question1]}")
-print(f"Difficulty: {dificultyList[Question1]}")
-print(f"Meal: {mealList[Question2]}")
-print(f"Shuttle: {dificultyList[shuttleChoice]}")
+print(f"camp selection: {campList[Question1 - 1]}")
+print(f"Days: {dayList[Question1 - 1]}")
+print(f"Difficulty: {dificultyList[Question1 - 1]}")
+print(f"Meal: {mealList[Question2 - 1]}")
+print(f"Shuttle: {ShuttleList[shuttleChoice]}")
 print(f"Total cost: {cost}")   
 
 # =============================== confirm everything =============================== 
